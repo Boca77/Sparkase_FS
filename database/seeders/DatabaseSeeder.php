@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             MaterialsSeeder::class,
             CertificateSeeder::class,
             UserEvaluationsSeeder::class,
+            GenderSeeder::class
 
             // QuizSeeder::class,
             // QuizQuestionSeeder::class,

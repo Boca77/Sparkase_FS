@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use App\Models\Cities;
+use App\Models\Gender;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -17,11 +18,11 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Cities::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Gender::class)->constrained()->cascadeOnDelete();
             $table->string('phone');
-            $table->char('gender');
-            $table->dateTime('birth_date');
-            $table->string('image_path');
-            $table->string('study_time');
+            $table->date('birth_date');
+            $table->string('image_path')->default(' ')->nullable();
+            $table->string('study_time')->default(' ')->nullable();
             $table->timestamps();
         });
     }

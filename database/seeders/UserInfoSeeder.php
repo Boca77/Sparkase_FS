@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Cities;
+use App\Models\User;
 use App\Models\UserInfo;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -14,17 +15,17 @@ class UserInfoSeeder extends Seeder
      */
     public function run(): void
     {
-        $users = UserInfo::get();
+        $users = User::get();
 
         foreach ($users as $user) {
             UserInfo::create([
                 'user_id' => $user->id,
-                'city_id' => Cities::query()->inRandomOrder()->first()->id,
+                'cities_id' => Cities::query()->inRandomOrder()->first()->id,
                 'phone' => fake()->phoneNumber(),
                 'gender' => fake()->randomElement(['M', 'F']),
                 'birth_date' => fake()->dateTime(),
                 'image_path' => 'test',
-                'study_time' => fake()->randomElement(['morning', 'afternoon', 'night']),
+                'study_time' => fake()->randomElement(['10-20 минути', '30 минути', '45 минути', '1 час']),
 
             ]);
         }

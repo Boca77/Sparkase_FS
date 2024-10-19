@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Certificate extends Model
 {
     use HasFactory;
-    use BelongsTo;
     protected $fillable = [
         'id',
         'user_id',

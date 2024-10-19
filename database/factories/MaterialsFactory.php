@@ -18,7 +18,7 @@ class MaterialsFactory extends Factory
     public function definition(): array
     {
         return [
-            'lecture_id' => Lecture::get()->inRandomOrder()->first()->id,
+            'lecture_id' => Lecture::query()->inRandomOrder()->first()->id,
             'type' => fake()->word(),
             'content' => fake()->text(),
         ];

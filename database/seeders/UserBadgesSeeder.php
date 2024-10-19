@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Models\Badges;
 use App\Models\User;
-use App\Models\Topics;
-use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
 
-class UserTopicSeeder extends Seeder
+class UserBadgesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,9 +18,9 @@ class UserTopicSeeder extends Seeder
         $users = User::get();
 
         foreach ($users as $user) {
-            DB::table('user_topics')->insert([
+            DB::table('user_badges')->insert([
                 'user_id' => $user->id,
-                'topics_id' => Topics::query()->inRandomOrder()->first()->id
+                'badges_id' => Badges::query()->inRandomOrder()->first()->id
             ]);
         }
     }

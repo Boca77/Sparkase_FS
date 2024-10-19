@@ -19,8 +19,8 @@ class CertificateFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::get()->inRandomOrder()->first()->id,
-            'course_id' => Courses::get()->inRandomOrder()->first()->id,
+            'user_id' => User::query()->inRandomOrder()->first()->id,
+            'courses_id' => Courses::query()->inRandomOrder()->first()->id,
             'image_path' => 'test',	
         ];
     }

@@ -19,7 +19,7 @@ class UserInfoSeeder extends Seeder
         foreach ($users as $user) {
             UserInfo::create([
                 'user_id' => $user->id,
-                'city_id' => Cities::get()->inRandomOrder()->first()->id,
+                'city_id' => Cities::query()->inRandomOrder()->first()->id,
                 'phone' => fake()->phoneNumber(),
                 'gender' => fake()->randomElement(['M', 'F']),
                 'birth_date' => fake()->dateTime(),

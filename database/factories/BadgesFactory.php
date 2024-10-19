@@ -17,8 +17,8 @@ class BadgesFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->lexify(),
-            'description' => fake()->sentences(2),
+            'name' => fake()->word(),
+            'description' => fake()->sentence(),
             'image_path' => 'test',
         ];
     }

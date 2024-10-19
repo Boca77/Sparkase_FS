@@ -18,7 +18,7 @@ class LectureFactory extends Factory
     public function definition(): array
     {
         return [
-            'course_id' => Courses::get()->inRandomOrder()->first()->id,
+            'courses_id' => Courses::query()->inRandomOrder()->first()->id,
             'name' => fake()->name(),
             'description' => fake()->text(),
             'audio_path' => 'test',

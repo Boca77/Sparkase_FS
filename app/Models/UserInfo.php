@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class UserInfo extends Model
 {
     use HasFactory;
-    use BelongsTo;
-
 
     protected $fillable = [
         'id',

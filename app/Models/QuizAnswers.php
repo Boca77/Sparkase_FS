@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-class quiz_anwers extends Model
+class QuizAnswers extends Model
 {
     use HasFactory;
 
@@ -13,6 +13,6 @@ class quiz_anwers extends Model
     ];
     public function question()
     {
-        return $this->belongsTo(quiz_question::class);
+        return $this->belongsTo(QuizQuestion::class);
     }
 }

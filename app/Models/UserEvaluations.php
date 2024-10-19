@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class UserEvaluations extends Model
 {
+    use HasFactory;
     protected $fillable = [
         'id',
         'user_id',
@@ -27,5 +28,4 @@ class UserEvaluations extends Model
     {
         return $this->belongsTo(Courses::class);
     }
-    use HasFactory;
 }

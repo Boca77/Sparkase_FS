@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Cities;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class CitiesSeeder extends Seeder
 {
@@ -12,6 +13,6 @@ class CitiesSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Cities::factory(10)->create();
     }
 }

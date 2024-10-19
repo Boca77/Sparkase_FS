@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('phone');
             $table->char('gender');
             $table->dateTime('birth_date');
-            $table->string('image_path');
-            $table->string('study_time');
+            $table->string('image_path')->nullable();
+            $table->string('study_time')->nullable();
             $table->timestamps();
         });
     }

@@ -23,14 +23,14 @@ class RegisterUserRequest extends FormRequest
     {
         return [
             'id',
-            'name',
-            'surname',
-            'email',
-            'password',
+            'name' => 'required|string',
+            'surname' => 'required|string',
+            'email' => 'required|email|unique',
+            'password' => 'required|min:6|confirmed',
             'user_id',
-            'gender',
-            'birth_date',
-            'phone',
+            'gender_id' => 'required',
+            'birth_date' => 'required',
+            'phone' => 'required:min:9',
             'image_path'
         ];
     }

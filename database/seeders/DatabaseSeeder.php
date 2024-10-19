@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             BadgesSeeder::class,
             CitiesSeeder::class,
+            GenderSeeder::class,
             TopicsSeeder::class,
             UserInfoSeeder::class,
             UserTopicSeeder::class,
@@ -32,7 +33,6 @@ class DatabaseSeeder extends Seeder
             MaterialsSeeder::class,
             CertificateSeeder::class,
             UserEvaluationsSeeder::class,
-            GenderSeeder::class
 
             // QuizSeeder::class,
             // QuizQuestionSeeder::class,

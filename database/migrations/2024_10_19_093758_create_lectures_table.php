@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('lectures', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Courses::class);
+            $table->foreignIdFor(Courses::class)->constrained()->cascadeOnDelete();
             $table->string('name');
             $table->text('description');
             $table->string('audio_path');

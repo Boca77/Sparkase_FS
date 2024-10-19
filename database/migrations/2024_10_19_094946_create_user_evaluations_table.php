@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('user_evaluations', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
-            $table->foreignIdFor(Courses::class);
+            $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Courses::class)->constrained()->cascadeOnDelete();
             $table->boolean('recommendation');
             $table->string('grade');
             $table->text('message');

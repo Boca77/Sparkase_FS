@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('user_courses', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
-            $table->foreignIdFor(Courses::class);
+            $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Courses::class)->constrained()->cascadeOnDelete();
             $table->dateTime('started_at');
             $table->dateTime('completed_at');
             $table->timestamps();

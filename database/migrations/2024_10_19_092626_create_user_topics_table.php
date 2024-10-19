@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('user_topics', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
-            $table->foreignIdFor(Topics::class);
+            $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Topics::class)->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('user_infos', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
-            $table->foreignIdFor(Cities::class);
+            $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Cities::class)->constrained()->cascadeOnDelete();
             $table->string('phone');
             $table->char('gender');
             $table->dateTime('birth_date');

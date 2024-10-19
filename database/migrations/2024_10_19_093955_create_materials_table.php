@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('materials', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Lecture::class);
+            $table->foreignIdFor(Lecture::class)->constrained()->cascadeOnDelete();
             $table->string('type');
             $table->text('content');
             $table->timestamps();

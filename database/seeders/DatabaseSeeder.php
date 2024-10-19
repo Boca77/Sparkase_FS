@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             BadgesSeeder::class,
             CitiesSeeder::class,
+            GenderSeeder::class,
             TopicsSeeder::class,
             UserInfoSeeder::class,
             UserTopicSeeder::class,

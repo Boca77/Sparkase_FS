@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class quiz_question extends Model
+class QuizQuestion extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'name', 'description', 'image'
     ];
@@ -19,6 +19,6 @@ class quiz_question extends Model
     }
     public function anwers()
     {
-        return $this->hasMany(quiz_anwers::class);
+        return $this->hasMany(QuizAnswers::class);
     }
 }

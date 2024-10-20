@@ -27,8 +27,6 @@
                             <img class="w-10 h-10 rounded-full" src="{{ asset('images/admin.jpg') }}"
                                 alt="Rounded avatar">
                             <div class="ms-5">{{ Auth::user()->name }}</div>
-
-
                             <div class="ms-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 20 20">

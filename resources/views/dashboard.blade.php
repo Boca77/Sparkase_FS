@@ -6,7 +6,7 @@
             <div class="p-6">
                 <!-- Logo -->
                 <div class="mb-10 flex justify-center">
-                    <img src="{{asset('images/image.png')}}" alt="logo" class="w-20">
+                    <img src="{{ asset('images/image.png') }}" alt="logo" class="w-20">
                 </div>
 
                 <!-- Navigation Menu -->
@@ -114,7 +114,7 @@
                         Превземи целосна листа
                     </button>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -122,8 +122,8 @@
     <!-- Footer -->
     <footer class="bg-white p-4 mt-8">
         <div class="flex justify-between items-center max-w-7xl mx-auto">
-            <img src="/path-to-videolap-logo.png" alt="VideoLap Logo" class="h-8">
-            <img src="/path-to-sparkasse-logo.png" alt="Sparkasse Logo" class="h-8">
+            <img src="{{ asset('images/image.png') }}" alt="VideoLap Logo" class="h-16">
+            <img src="{{ asset('images/logo.png') }}" alt="Sparkasse Logo" class="h-8">
         </div>
     </footer>
 </x-app-layout>

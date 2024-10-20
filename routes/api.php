@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\BadgeController;
 use App\Http\Controllers\Api\CityController;
 use App\Http\Controllers\Api\CourseController;
 use App\Http\Controllers\Api\GenderController;
@@ -22,5 +23,6 @@ Route::get('/courses/{id}', [ShowCourseController::class, 'show']);
 Route::apiResource('/genders', GenderController::class);
 Route::apiResource('/cities', CityController::class);
 Route::apiResource('/courses', CourseController::class);
+Route::apiResource('/badges', BadgeController::class);
 
 

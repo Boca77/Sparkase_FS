@@ -26,13 +26,15 @@ class AuthController extends Controller
     /** @var User $user */
     $user = Auth::user();
 
-    $user->load('userInfo');
+    $user->load('userInfo.city');
+
 
     $token = $user->createToken('main')->plainTextToken;
 
     return response()->json([
         'message' => 'Authenticated',
         'user' => $user,
+        // 'city_name' => $user->userInfo?->city?->name ?? 'N/A',
     ], 200)->header('Authorization', 'Bearer ' . $token);
 }
 

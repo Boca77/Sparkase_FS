@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 
-Route::get('hello', function (){
+Route::get('hello', function () {
     return response()->json([
         'Hello, World!'
     ]);

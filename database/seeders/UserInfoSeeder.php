@@ -17,7 +17,6 @@ class UserInfoSeeder extends Seeder
     public function run(): void
     {
         $users = User::get();
-        $gender = Gender::get();
 
         foreach ($users as $user) {
             UserInfo::create([

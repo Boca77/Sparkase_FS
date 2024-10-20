@@ -32,7 +32,7 @@
             <!-- Dashboard Cards -->
             <div class="grid grid-cols-3 gap-8">
                 <!-- Calendar and Stats -->
-                <div class="col-span-1 p-6 bg-blue-50 p-6 rounded-lg shadow">
+                <div class="col-span-1 p-6 bg-blue-50 p-6 rounded-lg">
                     <h2 class="text-lg font-semibold mb-4">Вашите тековни активности</h2>
                     <!-- Calendar Placeholder -->
                     <div class="bg-gray-100 p-4 rounded-md h-64">Calendar Here</div>
@@ -90,7 +90,7 @@
 
 
                 <!-- Badges Earned -->
-                <div class="col-span-1 p-6 bg-blue-50 p-6 rounded-lg shadow">
+                <div class="col-span-1 p-6 bg-blue-50 p-6 rounded-lg">
                     <h2 class="text-lg font-semibold mb-4">Број на добиени беџови</h2>
                     <ul class="text-gray-600 space-y-2">
                         <li>Златен беџ: 5</li>
@@ -120,8 +120,9 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-white p-4 mt-8">
-        <div class="flex justify-between items-center max-w-7xl mx-auto">
+     <hr class="mt-10">
+    <footer class="bg-white p-4">
+        <div class="flex justify-between items-center max-w-7xl mx-auto p-5">
             <img src="{{ asset('images/image.png') }}" alt="VideoLap Logo" class="h-16">
             <img src="{{ asset('images/logo.png') }}" alt="Sparkasse Logo" class="h-8">
         </div>

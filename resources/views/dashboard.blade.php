@@ -2,7 +2,7 @@
     <!-- Sidebar and Main Content Wrapper -->
     <div class="flex min-h-screen bg-white mt-10">
         <!-- Sidebar -->
-        <aside class="w-1/5 bg-blue-50 p-6 rounded-lg"  style="height: 100%;">
+        <aside class="w-1/5 bg-blue-50 p-6 rounded-lg" style="height: 100%;">
             <div class="p-6">
                 <!-- Logo -->
                 <div class="mb-10 flex justify-center">
@@ -12,16 +12,24 @@
                 <!-- Navigation Menu -->
                 <nav class="space-y-4 text-lg flex flex-col justify-between" style="height: 300px;">
                     <div>
-                        <a href="/dashboard" class="block text-blue-600 hover:bg-gray-300 hover:rounded hover:px-4 hover:transition-all font-bold">Главен панел</a>
-                        <a href="{{ route('profile.edit') }}" class="block text-blue-600 hover:bg-gray-300 hover:rounded hover:px-4 hover:transition-all font-bold">Мој профил</a>
-                        <a href="#" class="block text-blue-600 hover:bg-gray-300 hover:rounded hover:px-4 hover:transition-all font-bold">Статистики</a>
-                        <a href="#" class="block text-blue-600 hover:bg-gray-300 hover:rounded hover:px-4 hover:transition-all font-bold">Курсеви</a>
+                        <a href="/dashboard"
+                            class="block text-blue-600 hover:bg-gray-300 hover:rounded hover:px-4 hover:transition-all font-bold">Главен
+                            панел</a>
+                        <a href="{{ route('profile.edit') }}"
+                            class="block text-blue-600 hover:bg-gray-300 hover:rounded hover:px-4 hover:transition-all font-bold">Мој
+                            профил</a>
+                        <a href="#"
+                            class="block text-blue-600 hover:bg-gray-300 hover:rounded hover:px-4 hover:transition-all font-bold">Статистики</a>
+                        <a href="{{ route('courses.index') }}"
+                            class="block text-blue-600 hover:bg-gray-300 hover:rounded hover:px-4 hover:transition-all font-bold">Курсеви</a>
                     </div>
                     <div>
-                         <form action="{{ route('logout') }}" method="POST">
+                        <form action="{{ route('logout') }}" method="POST">
                             @csrf
-                            <button type="submit" class="block text-blue-600 hover:bg-gray-300 hover:rounded hover:px-4 hover:transition-all font-bold">Одјави се</button>
-                         </form>
+                            <button type="submit"
+                                class="block text-blue-600 hover:bg-gray-300 hover:rounded hover:px-4 hover:transition-all font-bold">Одјави
+                                се</button>
+                        </form>
                     </div>
                 </nav>
             </div>
@@ -37,7 +45,7 @@
                         <button class="bg-blue-600 text-white px-4 py-2 rounded-lg">Превземи во Excel</button>
                     </div>
                 </div>
-                    <p class="text-blue-600 mt-5">Види што сработија студентите во последниов период!</p>
+                <p class="text-blue-600 mt-5">Види што сработија студентите во последниов период!</p>
             </div>
 
             <!-- Dashboard Cards -->
@@ -131,7 +139,7 @@
     </div>
 
     <!-- Footer -->
-     <hr class="mt-10">
+    <hr class="mt-10">
     <footer class="bg-white p-4">
         <div class="flex justify-between items-center max-w-7xl mx-auto p-5">
             <img src="{{ asset('images/image.png') }}" alt="VideoLap Logo" class="h-16">

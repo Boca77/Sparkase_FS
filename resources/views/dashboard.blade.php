@@ -1,43 +1,100 @@
-@extends('layouts.app')
+<x-app-layout>
+    <!-- Sidebar and Main Content Wrapper -->
+    <div class="flex min-h-screen bg-gray-50">
+        <!-- Sidebar -->
+        <aside class="w-1/5 bg-white border-r">
+            <div class="p-6">
+                <!-- Logo -->
+                <div class="mb-10">
+                    <img src="/path-to-logo.png" alt="Logo" class="h-12">
+                </div>
 
-@section('content')
-    <div class="max-w-4xl mx-auto py-6 sm:px-6 lg:px-8">
-        <h1 class="text-2xl font-bold mb-6">Dashboard</h1>
-        
-        <form class="max-w-md mx-auto space-y-6">
-            <div class="relative z-0 w-full mb-5 group">
-                <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                <label for="floating_email" class="absolute text-sm text-gray-500 transition-transform duration-300 transform scale-75 -translate-y-6 top-3 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
+                <!-- Navigation Menu -->
+                <nav class="space-y-4">
+                    <a href="#" class="block text-blue-600 font-semibold">Главна</a>
+                    <a href="#" class="block text-gray-600">Курсови</a>
+                    <a href="#" class="block text-gray-600">Корисници</a>
+                    <a href="#" class="block text-gray-600">Факултети</a>
+                </nav>
             </div>
-            <div class="relative z-0 w-full mb-5 group">
-                <input type="password" name="floating_password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                <label for="floating_password" class="absolute text-sm text-gray-500 transition-transform duration-300 transform scale-75 -translate-y-6 top-3 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
-            </div>
-            <div class="relative z-0 w-full mb-5 group">
-                <input type="password" name="repeat_password" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                <label for="floating_repeat_password" class="absolute text-sm text-gray-500 transition-transform duration-300 transform scale-75 -translate-y-6 top-3 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm password</label>
-            </div>
-            <div class="grid md:grid-cols-2 md:gap-6">
-                <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                    <label for="floating_first_name" class="absolute text-sm text-gray-500 transition-transform duration-300 transform scale-75 -translate-y-6 top-3 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:scale-75 peer-focus:-translate-y-6">First name</label>
-                </div>
-                <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                    <label for="floating_last_name" class="absolute text-sm text-gray-500 transition-transform duration-300 transform scale-75 -translate-y-6 top-3 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:scale-75 peer-focus:-translate-y-6">Last name</label>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8">
+            <!-- Top Bar -->
+            <div class="flex justify-between items-center mb-8">
+                <h1 class="text-3xl font-bold text-blue-600">Добредојде назад, Емилија!</h1>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg">Посетете профил</button>
+                    <div class="flex items-center space-x-2">
+                        <span>Емилија</span>
+                        <img src="/path-to-avatar.png" alt="User Avatar" class="w-10 h-10 rounded-full">
+                    </div>
                 </div>
             </div>
-            <div class="grid md:grid-cols-2 md:gap-6">
-                <div class="relative z-0 w-full mb-5 group">
-                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                    <label for="floating_phone" class="absolute text-sm text-gray-500 transition-transform duration-300 transform scale-75 -translate-y-6 top-3 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:scale-75 peer-focus:-translate-y-6">Phone number (123-456-7890)</label>
+
+            <!-- Dashboard Cards -->
+            <div class="grid grid-cols-3 gap-8">
+                <!-- Calendar and Stats -->
+                <div class="col-span-1 bg-white p-6 rounded-lg shadow">
+                    <h2 class="text-lg font-semibold mb-4">Вашите тековни активности</h2>
+                    <!-- Calendar Placeholder -->
+                    <div class="bg-gray-100 p-4 rounded-md h-64">Calendar Here</div>
                 </div>
-                <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="floating_company" id="floating_company" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                    <label for="floating_company" class="absolute text-sm text-gray-500 transition-transform duration-300 transform scale-75 -translate-y-6 top-3 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:scale-75 peer-focus:-translate-y-6">Company (Ex. Google)</label>
+
+                <!-- Usage Chart -->
+                <div class="col-span-2 bg-white p-6 rounded-lg shadow">
+                    <h2 class="text-lg font-semibold mb-4">Употреба на платформата</h2>
+                    <!-- Chart Placeholder -->
+                    <div class="bg-gray-100 p-4 rounded-md h-64">Chart Here</div>
+                </div>
+
+                <!-- Active Users -->
+                <div class="col-span-1 bg-white p-6 rounded-lg shadow">
+                    <h2 class="text-lg font-semibold mb-4">Активни корисници</h2>
+                    <div class="bg-gray-100 p-4 rounded-md h-32">Users Activity Graph Here</div>
+                </div>
+
+                <!-- Certificates -->
+                <div class="col-span-1 bg-white p-6 rounded-lg shadow">
+                    <h2 class="text-lg font-semibold mb-4">Број на добиени сертификати по курс</h2>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>Курс 1: 120</li>
+                        <li>Курс 2: 98</li>
+                        <li>Курс 3: 85</li>
+                    </ul>
+                </div>
+
+                <!-- Badges Earned -->
+                <div class="col-span-1 bg-white p-6 rounded-lg shadow">
+                    <h2 class="text-lg font-semibold mb-4">Број на добиени беџови</h2>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>Златен беџ: 5</li>
+                        <li>Сребрен беџ: 12</li>
+                        <li>Бронзен беџ: 15</li>
+                    </ul>
+                </div>
+
+                <!-- Top Students -->
+                <div class="col-span-2 bg-white p-6 rounded-lg shadow">
+                    <h2 class="text-lg font-semibold mb-4">5 најдобри студенти</h2>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between"><span>Студент 1</span><span>95%</span></li>
+                        <li class="flex justify-between"><span>Студент 2</span><span>90%</span></li>
+                        <li class="flex justify-between"><span>Студент 3</span><span>85%</span></li>
+                        <li class="flex justify-between"><span>Студент 4</span><span>80%</span></li>
+                        <li class="flex justify-between"><span>Студент 5</span><span>78%</span></li>
+                    </ul>
                 </div>
             </div>
-            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-        </form>
+        </div>
     </div>
-@endsection
+
+    <!-- Footer -->
+    <footer class="bg-white p-4 mt-8">
+        <div class="flex justify-between items-center max-w-7xl mx-auto">
+            <img src="/path-to-videolap-logo.png" alt="VideoLap Logo" class="h-8">
+            <img src="/path-to-sparkasse-logo.png" alt="Sparkasse Logo" class="h-8">
+        </div>
+    </footer>
+</x-app-layout>

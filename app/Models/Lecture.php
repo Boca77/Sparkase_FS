@@ -18,8 +18,13 @@ class Lecture extends Model
         'duration'
     ];
 
-    public function course():BelongsTo
+    public function course(): BelongsTo
     {
         return $this->belongsTo(Courses::class);
+    }
+
+    public function lectureBody()
+    {
+        return $this->hasMany(LectureBody::class);
     }
 }

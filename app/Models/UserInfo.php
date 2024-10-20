@@ -28,7 +28,7 @@ class UserInfo extends Model
 
     public function city(): BelongsTo
     {
-        return $this->belongsTo(Cities::class);
+        return $this->belongsTo(Cities::class, 'cities_id');
     }
 
     public function gender():BelongsTo

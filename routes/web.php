@@ -12,16 +12,13 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 
-    // Admin routes protected by 'CheckIfUserIsAdmin'
-    Route::middleware([CheckIfUserIsAdmin::class])->group(function () {
-        Route::get('/dashboard', function () {
-            return view('dashboard');
-        })->name('dashboard');
+    Route::resource('courses', CourseController::class);
+    Route::resource('lectures', LectureController::class);
 
-        Route::resource('courses', CourseController::class);
-        Route::resource('lectures', LectureController::class);
-    });
 
     // Profile routes accessible to all authenticated users
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

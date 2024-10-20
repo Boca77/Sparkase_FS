@@ -26,6 +26,8 @@ class AuthController extends Controller
     /** @var User $user */
     $user = Auth::user();
 
+    $user->load('userInfo');
+
     $token = $user->createToken('main')->plainTextToken;
 
     return response()->json([

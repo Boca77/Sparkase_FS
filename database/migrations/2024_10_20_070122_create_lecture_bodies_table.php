@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('lecture_bodies', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Lecture::class)->constrained()->cascadeOnDelete();
-            $table->string('subtitle');
+            $table->string('subtitle')->nullable();
             $table->text('content');
             $table->timestamps();
         });

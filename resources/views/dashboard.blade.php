@@ -124,7 +124,15 @@
     <footer class="bg-white p-4">
         <div class="flex justify-between items-center max-w-7xl mx-auto p-5">
             <img src="{{ asset('images/image.png') }}" alt="VideoLap Logo" class="h-16">
+            <div>
+                <a href="#" class="pe-10">Контакт</a>
+                <a href="#" class="pe-10">ЧПП</a>
+                <a href="#">Политика за приватност</a>
+            </div>
             <img src="{{ asset('images/logo.png') }}" alt="Sparkasse Logo" class="h-8">
+        </div>
+        <div class="flex justify-center text-blue-600">
+            &copy;VibeOnEdu
         </div>
     </footer>
 </x-app-layout>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Courses;
+
 class CourseController extends Controller
 {
     /**
@@ -12,7 +13,7 @@ class CourseController extends Controller
     public function index()
     {
         $course = Courses::all();
-        return view('courses.index', compact('courses'));
+        return view('course-form', compact('courses'));
     }
 
     /**
@@ -43,8 +44,8 @@ class CourseController extends Controller
      */
     public function show(string $id)
     {
-       $course = Courses::findOrFail($id);
-       return view('courses.show', compact('corse'));
+        $course = Courses::findOrFail($id);
+        return view('courses.show', compact('corse'));
     }
 
     /**
@@ -79,9 +80,9 @@ class CourseController extends Controller
      */
     public function destroy(string $id)
     {
-       $course = Courses::findOrFail($id);
-       $course->delete();
+        $course = Courses::findOrFail($id);
+        $course->delete();
 
-       return redirect()->route('courses.index')->with('success', 'Course deleted successfully');
+        return redirect()->route('courses.index')->with('success', 'Course deleted successfully');
     }
 }

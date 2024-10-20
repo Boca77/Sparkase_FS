@@ -20,7 +20,6 @@ class LectureFactory extends Factory
         return [
             'courses_id' => Courses::query()->inRandomOrder()->first()->id,
             'name' => fake()->name(),
-            'description' => fake()->text(),
             'audio_path' => 'test',
             'duration' => fake()->randomNumber(),
         ];

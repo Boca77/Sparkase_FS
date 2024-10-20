@@ -10,17 +10,17 @@ class Courses extends Model
 {
     protected $fillable = [
         'id',
-        'modules_id',
+        'module_id',
         'name',
         'description'
     ];
 
-    public function modules():BelongsTo
+    public function modules(): BelongsTo
     {
         return $this->belongsTo(Modules::class);
     }
 
-    public function lectures():HasMany
+    public function lectures(): HasMany
     {
         return $this->hasMany(Lecture::class);
     }

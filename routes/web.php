@@ -16,14 +16,21 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::resource('courses', CourseController::class);
-    Route::resource('lectures', LectureController::class);
+    // Route::resource('courses', CourseController::class);
+    // Route::resource('lectures', LectureController::class);
 
 
     // Profile routes accessible to all authenticated users
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
+    Route::get('/courses/create', [CourseController::class, 'create'])->name('courses.create');
+    Route::post('/courses/store', [CourseController::class, 'store'])->name('courses.post');
+    Route::get('/courses/edit/{course}', [CourseController::class, 'edit'])->name('courses.edit.web');
+    Route::put('/courses/update/{course}', [CourseController::class, 'update'])->name('courses.update.web');
+    Route::delete('/courses/delete/{course}', [CourseController::class, 'destroy'])->name('courses.destroy.web');
 });
 
 // A public route, accessible without authentication

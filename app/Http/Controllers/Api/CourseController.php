@@ -10,8 +10,9 @@ use Illuminate\Http\Request;
 class CourseController extends Controller
 {
     public function index() {
-        return CourseResource::collection(
-            Courses::all()
-        );
+        $course = Courses::with('lectures')->get();
+        return response()->json([
+            'data' => $course
+        ]);
     }
 }

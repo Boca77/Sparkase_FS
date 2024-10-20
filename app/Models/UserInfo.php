@@ -15,7 +15,7 @@ class UserInfo extends Model
         'user_id',
         'cities_id',
         'phone',
-        'gender',
+        'gender_id',
         'birth_date',
         'image_path',
         'study_time'

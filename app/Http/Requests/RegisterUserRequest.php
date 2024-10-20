@@ -25,13 +25,12 @@ class RegisterUserRequest extends FormRequest
             'id',
             'name' => 'required|string',
             'surname' => 'required|string',
-            'email' => 'required|email|unique',
-            'password' => 'required|min:6|confirmed',
+            'email' => 'required|email|unique:users,email',
             'user_id',
             'gender_id' => 'required',
             'birth_date' => 'required',
             'phone' => 'required:min:9',
-            'image_path'
-        ];
+            'password' => 'required|min:6',
+            ];
     }
 }

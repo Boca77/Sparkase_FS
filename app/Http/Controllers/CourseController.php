@@ -62,7 +62,7 @@ class CourseController extends Controller
     public function update(Request $request, string $id)
     {
         $course = Courses::findOrFail($id);
-        
+
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',

@@ -33,9 +33,7 @@ class AuthController extends Controller
     return response()->json([
         'message' => 'Authenticated',
         'user' => $user,
-    ], 200)->withHeaders([
-        'Authorization' => 'Bearer ' . $token,
-    ]);
+    ], 200)->header('Authorization', 'Bearer ' . $token);
 }
 
 public function register(RegisterUserRequest $request)
@@ -44,7 +42,7 @@ public function register(RegisterUserRequest $request)
         'name' => $request->name,
         'surname' => $request->surname,
         'email' => $request->email,
-        'password' => $request->password
+        'password' => bcrypt($request->password)
     ]);
 
     $user_info = UserInfo::create([
@@ -52,9 +50,7 @@ public function register(RegisterUserRequest $request)
         'gender_id' => $request->gender_id,
         'cities_id' => $request->cities_id,
         'birth_date' => $request->birth_date,
-        'phone' => $request->phone,
-        'image_path' => $request->image_path,
-        'study_time' => $request->study_time
+        'phone' => $request->phone
     ]);
 
     $token = $user->createToken('main')->plainTextToken;

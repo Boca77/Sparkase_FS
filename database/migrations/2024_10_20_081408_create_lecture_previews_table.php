@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\User;
 use App\Models\Lecture;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -13,12 +12,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_lectures', function (Blueprint $table) {
+        Schema::create('lecture_previews', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Lecture::class)->constrained()->cascadeOnDelete();
-            $table->dateTime('started_at')->nullable();
-            $table->dateTime('completed_at')->nullable();
+            $table->text('content');
+            $table->json('learn_points');
+            $table->text('fun_fact');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_lectures');
+        Schema::dropIfExists('lecture_previews');
     }
 };

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Topics;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,15 @@ class TopicsSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Topics::factory(10)->create();
+
+        $topics = [
+            'Бизнис', 'Финансии', 'Буџетирање', 'Инвестирање', 'Претприемништво', 'Заштеда', 'Продажба'
+        ];
+
+        foreach ($topics as $topic) {
+            Topics::create([
+                'name' => $topic,
+            ]);
+        }
     }
 }

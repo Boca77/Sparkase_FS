@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreignIdFor(Gender::class)->constrained()->cascadeOnDelete();
             $table->string('phone');
             $table->date('birth_date');
-            $table->string('image_path')->default(' ')->nullable();
+            $table->text('image_path')->default(' ')->nullable();
             $table->string('study_time')->default(' ')->nullable();
             $table->timestamps();
         });
